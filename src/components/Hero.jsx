@@ -1,12 +1,18 @@
+import ThreeHero from "../components/ThreeHero";
+import Blob from "../components/Blob";
+
 function Hero() {
   return (
     <div className="hero">
       <div className="hero-img-container">
         <div className="hero-img"></div>
       </div>
-      <div class="container">
-        <div class="row">
-          <div class="hero-copy">
+      <div className="container">
+        <div className="row">
+          <div className="hero-earth-container">
+            <ThreeHero />
+          </div>
+          <div className="hero-copy">
             <div className="tagline">FOR COMPANIES WITH RECURRING REVENUE</div>
             <h1>Grow on your terms.</h1>
             <div className="subtitle">

@@ -1,6 +1,5 @@
 import { useState } from "react";
 import ContractData from "../components/data/ContractData";
-
 import Hero from "../components/Hero";
 import SliderFilter from "../components/SliderFilter";
 

@@ -1,4 +1,4 @@
-export const COLUMNS = [
+const ColumnHeaders = [
   {
     Header: " ",
     accessor: "img",
