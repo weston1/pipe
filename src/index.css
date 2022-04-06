@@ -139,13 +139,7 @@ p {
   height: 75vh;
   overflow: hidden !important;
 }
-@media only screen and (max-width: 600px) {
-  .hero {
-    min-height: 75vh;
-    height: 95vh;
-    overflow: hidden !important;
-  }
-}
+
 .hero-overlay {
   clip-path: polygon(0 0, 100% 0%, 100% 75%, 0 90%);
 }
@@ -175,6 +169,18 @@ p {
   height: 80vh;
   top: 0;
   right: 100px;
+}
+@media only screen and (max-width: 600px) {
+  .hero {
+    min-height: 75vh;
+    height: 95vh;
+    overflow: hidden !important;
+  }
+  .hero-earth {
+    height: 70vh;
+    top: 0;
+    right: -10px;
+  }
 }
 .about-hero {
   min-height: 120vh;
