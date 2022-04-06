@@ -160,13 +160,13 @@ p {
 .hero-earth-container {
   margin: 0 auto;
   cursor: grab;
+  overflow: hidden !important;
 }
 .hero-earth {
   position: absolute;
-  height: 90vh;
+  height: 80vh;
   top: 0;
   right: 100px;
-  overflow: hidden !important;
 }
 .about-hero {
   min-height: 120vh;

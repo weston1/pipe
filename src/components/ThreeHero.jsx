@@ -38,7 +38,7 @@ export default function Viewer() {
   const ref = useRef();
   return (
     <div className="hero-earth">
-      <Canvas dpr={[1, 2]} camera={{ position: [5, 0, 0], fov: 50 }}>
+      <Canvas dpr={[1, 2]} camera={{ position: [5, 2, 0], fov: 50 }}>
         <ambientLight intensity={0.5} />
         <Suspense fallback={null}>
           <Model position={[0, 0.25, 0]} />

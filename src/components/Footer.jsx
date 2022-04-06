@@ -1,4 +1,3 @@
-import { Link } from "@material-ui/core";
 import { FaGithub, FaLinkedin } from "react-icons/fa";
 
 function Footer() {
@@ -54,20 +53,8 @@ function Footer() {
       </div>
       <hr />
       <div className="container py-4">
-        <Link
-          to="https://linkedin.com/pipe-technologies"
-          alt="Github Pipe Tech"
-          className="icon"
-        >
-          <FaLinkedin className="inline pr-2 text-white " />
-        </Link>
-        <Link
-          to="https://github.com/pipe-technologies"
-          alt="LinkedIn Pipe Tech"
-          className="icon"
-        >
-          <FaGithub className="inline pr-2 text-3xl text-white icon" />
-        </Link>
+        <FaLinkedin className="inline pr-2 text-white " />
+        <FaGithub className="inline pr-2 text-3xl text-white icon" />
 
         <p className="copyright">&copy; {footerYear} Pipe Technologies, Inc.</p>
       </div>
