@@ -9,38 +9,34 @@ function ContractItem({ item }) {
         </td>
       </div>
       <Card className="contract-list">
-        <td className="container row">
+        <td className="row">
           <input
             type="checkbox"
             className="checkbox my-auto"
             id={item.invoiceID}
             name="contracts"
           />
-          <td className="col-1 logo-mask">
-            <img
-              src={item.img}
-              alt={item.company}
-              className="logo-img m-auto"
-            />
-          </td>
-          <td className="col-1">
-            <p>{item.company}</p>
-          </td>
-          <td className="col-1">
-            <p className="badge">{item.status}</p>
-          </td>
-          <td className="col-1">
-            <p>{item.invoiceID}</p>
-          </td>
-          <td className="col-1">
-            <p>{item.startDate}</p>
-          </td>
-          <td className="col-1">
-            <p>{item.endDate}</p>
-          </td>
-          <td className="col-1">
-            <p>{item.mrr}</p>
-          </td>
+        </td>
+        <td className="logo-mask">
+          <img src={item.img} alt={item.company} className="logo-img m-auto" />
+        </td>
+        <td>
+          <p>{item.company}</p>
+        </td>
+        <td>
+          <p className="badge">{item.status}</p>
+        </td>
+        <td>
+          <p className="date">{item.invoiceID}</p>
+        </td>
+        <td>
+          <p>{item.startDate}</p>
+        </td>
+        <td>
+          <p>{item.endDate}</p>
+        </td>
+        <td>
+          <p>${item.mrr}</p>
         </td>
       </Card>
     </>

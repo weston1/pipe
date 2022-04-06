@@ -13,6 +13,7 @@ function Navbar() {
           fillRule="evenodd"
           clipRule="evenodd"
           className="inline-block fill-current"
+          id="logo"
         >
           <path
             fill-rule="evenodd"

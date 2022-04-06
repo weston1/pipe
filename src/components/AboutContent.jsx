@@ -1,11 +1,9 @@
-import ThreeHero from "../components/ThreeHero";
-import Blob from "../components/Blob";
 import { FaCode } from "react-icons/fa";
+import Blob from "../components/Blob";
 
 function AboutContent() {
   return (
     <div className="hero">
-      <Blob />
       <div className="about-hero-img-container">
         <div className="about-hero-img"></div>
       </div>
@@ -22,7 +20,7 @@ function AboutContent() {
             <h2>
               <strong>Tools &amp; Technology</strong>
             </h2>
-            <ul>
+            <ul className="text-success">
               <code>React.JS</code>
               <br />
               <code>react-icons</code>
@@ -42,6 +40,9 @@ function AboutContent() {
                 Weston Brown
               </span>
             </p>
+          </div>
+          <div>
+            <Blob />
           </div>
         </div>
       </div>

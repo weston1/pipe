@@ -14,6 +14,8 @@
   --primary: #00df9a;
   --secondary: #11171c;
   --third: #fff;
+  --alt: #147758;
+
   --lightGrey: #cacaca;
   --midGrey: #555555;
   --darkGrey: #202123;
@@ -106,7 +108,9 @@ p {
   text-transform: uppercase;
   font-family: var(--font-secondary);
 }
-
+.column-title {
+  font-size: 12px;
+}
 /* Page */
 
 .about {
@@ -154,13 +158,14 @@ p {
   width: 50vw;
 }
 .hero-earth-container {
-  margin-right: -100px;
+  margin: 0 auto;
+  cursor: grab;
 }
 .hero-earth {
   position: absolute;
-  height: 70vh;
+  height: 90vh;
   top: 0;
-  right: 0;
+  right: 100px;
   overflow: hidden !important;
 }
 .about-hero-overlay {
@@ -169,12 +174,12 @@ p {
 .about-hero-img-container {
   overflow: hidden;
   width: 100vw;
-  height: 70vh;
+  height: 120vh;
   position: absolute;
   padding: 0;
   right: 0;
   background: #000;
-  /* clip-path: polygon(0% 83%, 100% 95%, 100% 0%, 0% 0%); */
+  clip-path: polygon(0% 83%, 100% 95%, 100% 0%, 0% 0%);
 }
 .about-hero-img {
   display: block;
@@ -182,19 +187,22 @@ p {
   height: 70vh;
   /* mix-blend-mode: multiply; */
   background-image: url("./components/assets/spinner.gif");
-  background-position: right center;
+  background-position: 100% 90%;
   background-repeat: no-repeat;
   background-size: cover;
-  position: relative;
+  position: absolute;
   right: 0;
-  opacity: 0.1;
+  opacity: 0.5;
 }
 .section {
   padding: 50px 0;
 }
-.blob-section {
+.blob-section canvas {
   position: absolute;
-  height: 50vh;
+  right: 10px;
+  height: 100vh;
+  width: 100vw;
+  z-index: 0;
 }
 .container {
   max-width: 90%;
@@ -266,71 +274,108 @@ p {
   font-size: 11px;
   text-align: left;
 }
-/* Table Styles */
-
+/* Slider Style */
 .slider {
   width: 100%;
-  height: 100%;
 }
+
+input[type="range"] {
+  max-width: 500px;
+  -webkit-appearance: none;
+  height: 13px;
+  border-radius: 6px;
+  background: black;
+  outline: none;
+  padding: 0;
+  margin: 0;
+}
+
+/* custom thumb */
+input[type="range"]::-webkit-slider-thumb {
+  -webkit-appearance: none;
+  appearance: none;
+  width: 25px;
+  height: 25px;
+  border-radius: 50%;
+  background: linear-gradient(290deg, var(--primary), var(--alt));
+  border: whitesmoke 1px solid;
+  cursor: pointer;
+  -webkit-transition: all 0.2s ease-in-out;
+  transition: all 0.2s ease-in-out;
+}
+
+input[type="range"]::-webkit-slider-thumb:hover {
+  transform: scale(1.04);
+}
+
+input[type="range"]::-moz-range-thumb {
+  -webkit-appearance: none;
+  appearance: none;
+  width: 25px;
+  height: 25px;
+  border-radius: 50%;
+  background: linear-gradient(290deg, var(--primary), var(--alt));
+  border: whitesmoke 1px solid;
+  cursor: pointer;
+  -webkit-transition: all 0.2s ease-in-out;
+  transition: all 0.2s ease-in-out;
+}
+
+.range-slider input[type="range"]::-moz-range-thumb:hover {
+  transform: scale(1.04);
+}
+
+/* remove border */
+input::-moz-focus-inner,
+input::-moz-focus-outer {
+  border: 0;
+}
+
+/* Table Styles */
+
 input[type="checkbox"] {
   -webkit-appearance: none;
   appearance: none;
   margin: 0;
   font: inherit;
   color: whitesmoke;
-  width: 1.15em;
-  height: 1.15em;
-  border: 0.15em solid whitesmoke;
-  border-radius: 0.15em;
+  width: 2em;
+  height: 2em;
+  border: 0.1em solid whitesmoke;
+  border-radius: var(--borderRadius);
   transform: translateY(-0.075em);
-
   display: grid;
   place-content: center;
+  margin: 0 15px;
 }
 
 input[type="checkbox"]::before {
   content: "";
-  width: 0.65em;
-  height: 0.65em;
+  width: 1em;
+  height: 1em;
   clip-path: polygon(14% 44%, 0 65%, 50% 100%, 100% 16%, 80% 0%, 43% 62%);
   transform: scale(0);
   transform-origin: bottom left;
   transition: 120ms transform ease-in-out;
   box-shadow: inset 1em 1em var(--form-control-color);
-  background-color: CanvasText;
+  background-color: transparent;
   color: whitesmoke;
 }
 
 input[type="checkbox"]:checked::before {
   transform: scale(1);
+  background-color: var(--primary);
+  color: #000;
 }
 
 input[type="checkbox"]:focus {
   outline-offset: max(2px, 0.15em);
 }
 
-#table-wrapper {
-  padding-left: 50px;
-  padding-right: 50px;
-  padding-top: 50px;
-  height: auto;
-  background: #0f2027; /* fallback for old browsers */
-}
 .table-container {
   border-radius: var(--borderRadius);
-  padding: 15px;
-  background: -webkit-linear-gradient(
-    to right,
-    #11191c,
-    #111516,
-    #040404
-  ); /* Chrome 10-25, Safari 5.1-6 */
-  background: linear-gradient(
-    to right,
-    #11191c,
-    #111516,
-    #040404
-  ); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+  padding: 15px 0;
+  margin: 0 auto;
 }
 .table-data {
   font-size: 11px;
@@ -353,9 +398,11 @@ table tr th {
 }
 
 table tr td {
-  font-size: 13px;
+  font-size: 12px;
 }
-
+td p {
+  margin: 0 10px;
+}
 table td,
 table th {
   padding: 8px;
@@ -382,6 +429,10 @@ table th {
   padding-bottom: 12px;
   text-align: center;
   color: white;
+}
+.date {
+  white-space: nowrap;
+  display: block;
 }
 
 /* Badge */
@@ -425,22 +476,22 @@ table th {
   text-decoration: none;
   font-weight: 700;
   letter-spacing: 0.05em;
-  font-size: 1rem;
+  font-size: 0.9rem;
   font-family: var(--font-primary);
   margin: 20px 0;
   display: inline-block;
   padding: 0.5rem 1rem;
-  transition: all 0.2s ease-in-out;
   cursor: pointer;
   border-radius: var(--borderRadius);
   border: none;
   width: 100%;
   max-width: 200px;
+  transition: all 0.1s ease-in-out;
 }
 .btn-simple {
   font-family: var(--font-primary);
   background: transparent;
-  font-weight: 700;
+  font-weight: 500;
   letter-spacing: 0.05em;
   font-size: 0.7rem;
   color: whitesmoke;
@@ -453,6 +504,10 @@ table th {
   color: black;
   outline: none;
   box-shadow: 10px 5px 5px rgba(50, 50, 93, 0.11), 0 1px 3px rgba(0, 0, 0, 0.08);
+  transform: scale(1.02);
+}
+.btn:active {
+  transform: scale(0.99);
 }
 .btn-sub {
   line-height: 25px;
@@ -463,13 +518,26 @@ table th {
 }
 
 /* Img */
-
+#logo {
+  width: 100%;
+  height: auto;
+  max-width: 200px;
+  max-height: 200px;
+  transition: all 0.1s ease-in-out;
+}
+#logo:hover {
+  transform: scale(1.05);
+}
+#logo:active {
+  transform: scale(0.99);
+}
 .logo-mask {
   width: 50px;
   height: 50px;
   justify-content: center;
   border-radius: var(--borderRadius);
   bottom: 0;
+  margin: 0 10px;
 }
 .logo-img {
   border-radius: var(--borderRadius);
@@ -1551,7 +1619,7 @@ table th {
 }
 
 .text-success {
-  color: #000;
+  color: var(--primary);
   transition: color 0.15s ease-in-out;
 }
 
