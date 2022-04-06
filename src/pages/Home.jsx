@@ -4,7 +4,7 @@ import Hero from "../components/Hero";
 import SliderFilter from "../components/SliderFilter";
 
 function Home() {
-  const [contracts, setContracts] = useState(ContractData);
+  const [contracts] = useState(ContractData);
 
   return (
     <>

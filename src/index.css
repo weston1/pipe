@@ -136,7 +136,15 @@ p {
 
 .hero {
   min-height: 75vh;
+  height: 75vh;
   overflow: hidden !important;
+}
+@media only screen and (max-width: 600px) {
+  .hero {
+    min-height: 75vh;
+    height: 95vh;
+    overflow: hidden !important;
+  }
 }
 .hero-overlay {
   clip-path: polygon(0 0, 100% 0%, 100% 75%, 0 90%);

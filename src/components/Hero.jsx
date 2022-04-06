@@ -1,5 +1,4 @@
 import ThreeHero from "../components/ThreeHero";
-import Blob from "../components/Blob";
 
 function Hero() {
   return (
