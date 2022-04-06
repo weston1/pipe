@@ -3,14 +3,14 @@ import Blob from "../components/Blob";
 
 function AboutContent() {
   return (
-    <div className="hero">
+    <div className="about-hero">
       <div className="about-hero-img-container">
         <div className="about-hero-img"></div>
       </div>
 
       <div className="container">
         <div className="row">
-          <div className="hero-copy">
+          <div className="about-hero-copy">
             <div className="tagline">001</div>
             <h1>Front End Project</h1>
             <div className="subtitle">

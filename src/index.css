@@ -168,6 +168,18 @@ p {
   right: 100px;
   overflow: hidden !important;
 }
+.about-hero {
+  min-height: 120vh;
+  overflow: hidden !important;
+}
+.about-hero-copy {
+  top: 150px;
+  position: absolute;
+  left: 50px;
+  width: 50vw;
+  z-index: 2;
+}
+
 .about-hero-overlay {
   clip-path: polygon(0 0, 100% 0%, 100% 75%, 0 90%);
 }
@@ -179,7 +191,8 @@ p {
   padding: 0;
   right: 0;
   background: #000;
-  clip-path: polygon(0% 83%, 100% 95%, 100% 0%, 0% 0%);
+
+  /* clip-path: polygon(0% 83%, 100% 95%, 100% 0%, 0% 0%); */
 }
 .about-hero-img {
   display: block;
@@ -192,16 +205,17 @@ p {
   background-size: cover;
   position: absolute;
   right: 0;
-  opacity: 0.5;
+  opacity: 0.05;
 }
 .section {
   padding: 50px 0;
 }
-.blob-section canvas {
+.blob-section {
   position: absolute;
-  right: 10px;
-  height: 100vh;
-  width: 100vw;
+  height: 90vh;
+  top: 0;
+  right: 3%;
+  overflow: hidden !important;
   z-index: 0;
 }
 .container {
